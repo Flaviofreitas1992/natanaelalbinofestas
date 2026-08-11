@@ -375,7 +375,7 @@ button {
   display: grid;
   margin-top: clamp(5rem, 9vw, 10rem);
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: clamp(5rem, 9vw, 9rem) clamp(1.5rem, 4vw, 4.5rem);
+  gap: clamp(5rem, 8vw, 8rem) clamp(1.5rem, 3vw, 3rem);
 }
 
 .essence-story {
@@ -384,16 +384,18 @@ button {
 }
 
 .essence-story-color {
-  grid-column: 1 / span 7;
+  grid-column: 1 / span 8;
+  grid-row: 1;
 }
 
 .essence-story-soft {
-  grid-column: 8 / span 5;
-  margin-top: clamp(4rem, 8vw, 8rem);
+  grid-column: 3 / span 8;
+  grid-row: 2;
 }
 
 .essence-story-build {
-  grid-column: 3 / span 5;
+  grid-column: 9 / span 4;
+  grid-row: 1;
 }
 
 .essence-image {
@@ -785,18 +787,23 @@ button {
   }
 
   .essence-gallery {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(12, minmax(0, 1fr));
     gap: 5rem 1.25rem;
   }
 
   .essence-story-color {
     grid-column: 1 / -1;
+    grid-row: auto;
   }
 
-  .essence-story-soft,
   .essence-story-build {
-    grid-column: auto;
-    margin-top: 0;
+    grid-column: 1 / span 5;
+    grid-row: auto;
+  }
+
+  .essence-story-soft {
+    grid-column: 6 / span 7;
+    grid-row: auto;
   }
 
   .essence-story figcaption {
