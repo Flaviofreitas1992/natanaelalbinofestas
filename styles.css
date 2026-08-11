@@ -318,13 +318,15 @@ button {
 }
 
 .manifesto {
-  display: grid;
-  min-height: 720px;
-  grid-template-columns: minmax(4rem, 0.35fr) 1.4fr 0.75fr;
-  align-items: center;
-  gap: clamp(2rem, 5vw, 7rem);
   overflow: hidden;
   background: var(--paper);
+}
+
+.essence-heading {
+  display: grid;
+  grid-template-columns: minmax(4rem, 0.35fr) 1.4fr 0.6fr;
+  align-items: start;
+  gap: clamp(2rem, 5vw, 7rem);
 }
 
 .section-number {
@@ -355,40 +357,105 @@ button {
   font-size: clamp(1rem, 1.5vw, 1.25rem);
 }
 
-.orbit {
-  position: relative;
-  width: min(32vw, 370px);
-  aspect-ratio: 1;
+.essence-note {
+  justify-self: end;
+  min-width: 11rem;
+  margin: 2.85rem 0 0;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.65rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
 }
 
-.orbit::before,
-.orbit span {
-  position: absolute;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  content: "";
+.essence-gallery {
+  display: grid;
+  margin-top: clamp(5rem, 9vw, 10rem);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(5rem, 9vw, 9rem) clamp(1.5rem, 4vw, 4.5rem);
 }
 
-.orbit::before {
-  inset: 0;
+.essence-story {
+  min-width: 0;
+  margin: 0;
 }
 
-.orbit span:nth-child(1) {
-  inset: 14%;
+.essence-story-color {
+  grid-column: 1 / span 7;
 }
 
-.orbit span:nth-child(2) {
-  inset: 30%;
-  background: var(--ink);
+.essence-story-soft {
+  grid-column: 8 / span 5;
+  margin-top: clamp(4rem, 8vw, 8rem);
 }
 
-.orbit span:nth-child(3) {
-  top: 7%;
-  right: 15%;
-  width: 11%;
-  aspect-ratio: 1;
-  border: 0;
+.essence-story-build {
+  grid-column: 3 / span 5;
+}
+
+.essence-image {
+  overflow: hidden;
   background: var(--mist);
+}
+
+.essence-story-color .essence-image,
+.essence-story-soft .essence-image {
+  aspect-ratio: 3 / 2;
+}
+
+.essence-story-build .essence-image {
+  aspect-ratio: 2 / 3;
+}
+
+.essence-image picture,
+.essence-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.essence-image img {
+  object-fit: cover;
+  transition: transform 700ms cubic-bezier(0.2, 0.65, 0.25, 1);
+}
+
+.essence-story:hover .essence-image img {
+  transform: scale(1.025);
+}
+
+.essence-story figcaption {
+  display: grid;
+  margin-top: 1.3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  grid-template-columns: 2.5rem 1fr;
+  gap: 1rem;
+}
+
+.essence-story figcaption > span {
+  padding-top: 0.25rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.essence-story h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.7rem, 2.8vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.essence-story figcaption p {
+  max-width: 36rem;
+  margin: 1rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.65;
 }
 
 .experience {
@@ -707,12 +774,34 @@ button {
     left: 45%;
   }
 
-  .manifesto {
+  .essence-heading {
     grid-template-columns: 3rem 1fr;
   }
 
-  .orbit {
-    display: none;
+  .essence-note {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 0;
+  }
+
+  .essence-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5rem 1.25rem;
+  }
+
+  .essence-story-color {
+    grid-column: 1 / -1;
+  }
+
+  .essence-story-soft,
+  .essence-story-build {
+    grid-column: auto;
+    margin-top: 0;
+  }
+
+  .essence-story figcaption {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
   }
 
   .section-heading {
@@ -781,9 +870,34 @@ button {
     min-height: auto;
   }
 
+  .essence-heading {
+    display: block;
+  }
+
   .section-number {
     width: 3rem;
     margin-bottom: 3rem;
+  }
+
+  .essence-note {
+    width: max-content;
+    margin-top: 2.5rem;
+  }
+
+  .essence-gallery {
+    grid-template-columns: 1fr;
+    gap: 4.5rem;
+  }
+
+  .essence-story-color,
+  .essence-story-soft,
+  .essence-story-build {
+    grid-column: 1;
+  }
+
+  .essence-story figcaption {
+    grid-template-columns: 2rem 1fr;
+    gap: 0.75rem;
   }
 
   .about {
