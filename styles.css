@@ -229,27 +229,7 @@ button {
 }
 
 .essence-heading {
-  display: grid;
-  grid-template-columns: minmax(4rem, 0.35fr) 1.4fr 0.6fr;
-  align-items: start;
-  gap: clamp(2rem, 5vw, 7rem);
-}
-
-.identity-story .essence-heading {
-  grid-template-columns: minmax(4rem, 0.35fr) minmax(0, 1.65fr);
-}
-
-.section-number {
-  align-self: start;
-  padding-top: 0.45rem;
-  border-top: 1px solid var(--line);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-}
-
-.identity-story .section-number {
-  border-color: var(--white-line);
+  display: block;
 }
 
 .manifesto-copy h2,
@@ -1213,15 +1193,6 @@ button {
   .manifesto {
     display: block;
     min-height: auto;
-  }
-
-  .essence-heading {
-    display: block;
-  }
-
-  .section-number {
-    width: 3rem;
-    margin-bottom: 3rem;
   }
 
   .essence-note {
