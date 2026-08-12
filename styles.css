@@ -703,24 +703,38 @@ button {
 }
 
 .course-heading h2 {
-  max-width: 10ch;
+  max-width: none;
   margin: 0;
   font-family: var(--serif);
-  font-size: clamp(3.7rem, 7.2vw, 7.8rem);
+  font-size: 1rem;
   font-weight: 400;
-  line-height: 0.88;
-  letter-spacing: -0.065em;
+}
+
+.course-title-main,
+.course-heading h2 em {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+.course-title-main {
+  font-size: clamp(3rem, 5.3vw, 5.75rem);
+  line-height: 0.94;
+  letter-spacing: -0.055em;
 }
 
 .course-heading h2 em {
-  display: block;
-  margin-top: 0.12em;
+  margin-top: 0.24em;
   color: var(--ink-soft);
+  font-size: clamp(2.5rem, 4.3vw, 4.75rem);
   font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
 }
 
 .course-copy {
-  padding-top: clamp(2rem, 4vw, 3.5rem);
+  padding-top: clamp(3.75rem, 6vw, 6rem);
 }
 
 .course-copy p {
@@ -988,7 +1002,7 @@ button {
   }
 
   .course-copy {
-    padding-top: 0;
+    padding-top: clamp(3rem, 8vw, 4.5rem);
   }
 
   .course-facts {
@@ -1019,8 +1033,17 @@ button {
     right: -11rem;
   }
 
-  .course-heading h2 {
-    font-size: clamp(3.15rem, 17vw, 5rem);
+  .course-title-main {
+    font-size: clamp(1.95rem, 9.5vw, 3.15rem);
+  }
+
+  .course-heading h2 em {
+    margin-top: 0.3em;
+    font-size: clamp(1.8rem, 8.6vw, 2.85rem);
+  }
+
+  .course-copy {
+    padding-top: 3rem;
   }
 
   .course-facts {
