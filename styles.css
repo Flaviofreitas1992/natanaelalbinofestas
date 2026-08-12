@@ -588,7 +588,7 @@ button {
   position: fixed;
   z-index: 12;
   bottom: -14rem;
-  left: clamp(1.25rem, 7vw, 7rem);
+  right: clamp(1.25rem, 7vw, 7rem);
   width: clamp(4.75rem, 7vw, 6.75rem);
   aspect-ratio: 0.82;
   border: 1px solid rgba(86, 57, 43, 0.2);
@@ -643,7 +643,7 @@ button {
   }
 
   46% {
-    transform: translate3d(2.7rem, -48vh, 0) rotate(4deg);
+    transform: translate3d(-2.7rem, -48vh, 0) rotate(4deg);
   }
 
   76% {
@@ -652,7 +652,7 @@ button {
 
   100% {
     opacity: 0;
-    transform: translate3d(-1.2rem, -125vh, 0) rotate(-3deg);
+    transform: translate3d(1.2rem, -125vh, 0) rotate(-3deg);
   }
 }
 
@@ -1249,7 +1249,7 @@ button {
   }
 
   .course-floating-balloon {
-    left: 1.25rem;
+    right: 1.25rem;
     width: 4.6rem;
   }
 
