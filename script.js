@@ -22,12 +22,17 @@ if ("IntersectionObserver" in window) {
   revealElements.forEach((element) => element.classList.add("is-visible"));
 }
 
-const courseSection = document.querySelector(".course");
+const courseTitle = document.querySelector(".course-title-main");
 const courseBalloon = document.querySelector(".course-floating-balloon");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-if (courseSection && courseBalloon && !prefersReducedMotion) {
+if (courseTitle && courseBalloon && !prefersReducedMotion) {
+  let hasBalloonStarted = false;
+
   const startBalloonAnimation = () => {
+    if (hasBalloonStarted) return;
+
+    hasBalloonStarted = true;
     courseBalloon.classList.add("is-rising");
     courseBalloon.addEventListener("animationend", () => courseBalloon.remove(), {
       once: true,
@@ -39,14 +44,30 @@ if (courseSection && courseBalloon && !prefersReducedMotion) {
       (entries) => {
         if (!entries.some((entry) => entry.isIntersecting)) return;
 
-        startBalloonAnimation();
         balloonObserver.disconnect();
+        startBalloonAnimation();
       },
-      { threshold: 0.12 },
+      {
+        rootMargin: "0px 0px -88% 0px",
+        threshold: 0,
+      },
     );
 
-    balloonObserver.observe(courseSection);
+    balloonObserver.observe(courseTitle);
   } else {
-    startBalloonAnimation();
+    const checkCourseTitlePosition = () => {
+      const titlePosition = courseTitle.getBoundingClientRect();
+      const topTriggerZone = window.innerHeight * 0.12;
+
+      if (titlePosition.top > topTriggerZone || titlePosition.bottom <= 0) return;
+
+      window.removeEventListener("scroll", checkCourseTitlePosition);
+      window.removeEventListener("resize", checkCourseTitlePosition);
+      startBalloonAnimation();
+    };
+
+    window.addEventListener("scroll", checkCourseTitlePosition, { passive: true });
+    window.addEventListener("resize", checkCourseTitlePosition);
+    checkCourseTitlePosition();
   }
 }
