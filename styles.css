@@ -426,12 +426,13 @@ button {
 }
 
 .whatsapp-button {
+  position: relative;
   display: flex;
   width: min(100%, 20rem);
   min-height: 3.6rem;
   margin: 0 auto;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 2rem;
   padding: 0.9rem 1.4rem;
   border: 1px solid var(--paper-light);
@@ -446,6 +447,8 @@ button {
 }
 
 .whatsapp-button span:last-child {
+  position: absolute;
+  right: 1.4rem;
   font-size: 1.1rem;
   line-height: 1;
   transition: transform 180ms ease;
