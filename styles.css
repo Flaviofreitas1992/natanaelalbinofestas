@@ -267,11 +267,12 @@ button {
 .manifesto-copy h2.concept-heading {
   margin: 0;
   font-family: var(--sans);
-  font-size: 0.67rem;
+  font-size: clamp(0.9rem, 1.35vw, 1.25rem);
   font-weight: 700;
   line-height: 1.6;
   letter-spacing: 0.24em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .manifesto-text {
