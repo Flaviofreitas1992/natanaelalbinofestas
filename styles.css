@@ -222,11 +222,21 @@ button {
   background: var(--paper);
 }
 
+.identity-story {
+  overflow: hidden;
+  color: var(--paper-light);
+  background: var(--ink-soft);
+}
+
 .essence-heading {
   display: grid;
   grid-template-columns: minmax(4rem, 0.35fr) 1.4fr 0.6fr;
   align-items: start;
   gap: clamp(2rem, 5vw, 7rem);
+}
+
+.identity-story .essence-heading {
+  grid-template-columns: minmax(4rem, 0.35fr) minmax(0, 1.65fr);
 }
 
 .section-number {
@@ -236,6 +246,10 @@ button {
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.12em;
+}
+
+.identity-story .section-number {
+  border-color: var(--white-line);
 }
 
 .manifesto-copy h2,
@@ -267,6 +281,10 @@ button {
   font-size: clamp(1rem, 1.4vw, 1.18rem);
 }
 
+.identity-story .manifesto-text {
+  color: rgba(245, 242, 233, 0.8);
+}
+
 .manifesto-text p {
   margin: 0 0 1.4rem;
 }
@@ -285,6 +303,11 @@ button {
   letter-spacing: -0.035em;
 }
 
+.identity-story .manifesto-signature {
+  border-color: var(--white-line);
+  color: var(--paper-light);
+}
+
 .essence-note {
   justify-self: end;
   min-width: 11rem;
@@ -297,6 +320,16 @@ button {
   line-height: 1.6;
   letter-spacing: 0.13em;
   text-transform: uppercase;
+}
+
+.essence-note.gallery-note {
+  width: max-content;
+  margin: 0 0 0 auto;
+  text-align: right;
+}
+
+.gallery-note + .essence-gallery {
+  margin-top: clamp(3rem, 6vw, 6rem);
 }
 
 .essence-gallery {
@@ -708,6 +741,10 @@ button {
   }
 
   .essence-heading {
+    grid-template-columns: 3rem 1fr;
+  }
+
+  .identity-story .essence-heading {
     grid-template-columns: 3rem 1fr;
   }
 
