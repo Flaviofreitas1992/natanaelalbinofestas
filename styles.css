@@ -449,22 +449,26 @@ button {
 .whatsapp-cta {
   display: grid;
   overflow: hidden;
-  border-top: 1px solid var(--line);
-  background: var(--paper-light);
-  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
-  align-items: end;
-  gap: clamp(3rem, 10vw, 10rem);
+  border-top: 1px solid var(--white-line);
+  border-bottom: 1px solid var(--white-line);
+  color: var(--paper-light);
+  text-align: center;
+  background: var(--ink-soft);
+  grid-template-columns: 1fr;
+  place-items: center;
+  gap: clamp(2.5rem, 5vw, 4rem);
 }
 
 .whatsapp-cta-heading,
 .whatsapp-cta-action {
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
 .whatsapp-cta h2 {
   max-width: 11ch;
-  margin: 0;
+  margin: 0 auto;
   font-family: var(--serif);
   font-size: clamp(3rem, 6vw, 6.6rem);
   font-weight: 400;
@@ -474,22 +478,24 @@ button {
 
 .whatsapp-cta-action > p {
   max-width: 33rem;
-  margin: 0 0 2rem;
-  color: var(--ink-soft);
+  margin: 0 auto 2rem;
+  color: rgba(245, 242, 233, 0.68);
   font-size: clamp(1rem, 1.4vw, 1.15rem);
 }
 
 .whatsapp-button {
   display: inline-flex;
+  width: min(100%, 20rem);
   min-height: 3.6rem;
+  margin: 0 auto;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
   padding: 0.9rem 1.4rem;
-  border: 1px solid var(--ink);
+  border: 1px solid var(--paper-light);
   border-radius: 999px;
-  color: var(--paper-light);
-  background: var(--ink);
+  color: var(--ink-soft);
+  background: var(--paper-light);
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -505,7 +511,7 @@ button {
 
 .whatsapp-button:hover,
 .whatsapp-button:focus-visible {
-  color: var(--ink);
+  color: var(--paper-light);
   background: transparent;
   transform: translateY(-2px);
 }
@@ -862,9 +868,7 @@ button {
   }
 
   .whatsapp-cta {
-    grid-template-columns: 1fr;
-    align-items: start;
-    gap: 3rem;
+    gap: 2.5rem;
   }
 
   .whatsapp-cta-action > p {
@@ -968,7 +972,7 @@ button {
   }
 
   .whatsapp-button {
-    width: 100%;
+    width: min(100%, 20rem);
   }
 
   .about {
