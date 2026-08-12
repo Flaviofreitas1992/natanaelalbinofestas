@@ -584,6 +584,78 @@ button {
   background: rgba(86, 57, 43, 0.07);
 }
 
+.course-floating-balloon {
+  position: fixed;
+  z-index: 12;
+  bottom: -14rem;
+  left: clamp(1.25rem, 7vw, 7rem);
+  width: clamp(4.75rem, 7vw, 6.75rem);
+  aspect-ratio: 0.82;
+  border: 1px solid rgba(86, 57, 43, 0.2);
+  border-radius: 51% 49% 48% 52% / 57% 57% 43% 43%;
+  opacity: 0;
+  background:
+    radial-gradient(circle at 31% 24%, rgba(255, 255, 255, 0.82) 0 5%, transparent 6%),
+    linear-gradient(145deg, #f0e2d7 0%, #dec8b8 55%, #c9aa96 100%);
+  box-shadow:
+    inset -0.8rem -0.9rem 1.4rem rgba(86, 57, 43, 0.16),
+    0 1rem 2.5rem rgba(17, 23, 22, 0.16);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.course-floating-balloon::before {
+  position: absolute;
+  top: calc(100% - 0.18rem);
+  left: 50%;
+  width: 0.85rem;
+  height: 0.72rem;
+  content: "";
+  background: #c9aa96;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  transform: translateX(-50%);
+}
+
+.course-balloon-string {
+  position: absolute;
+  top: calc(100% + 0.48rem);
+  left: 50%;
+  width: 2rem;
+  height: 8.5rem;
+  border-left: 1px solid rgba(86, 57, 43, 0.55);
+  border-radius: 50%;
+  transform: rotate(-6deg);
+  transform-origin: top left;
+}
+
+.course-floating-balloon.is-rising {
+  animation: course-balloon-rise 7.5s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+@keyframes course-balloon-rise {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(-4deg);
+  }
+
+  12% {
+    opacity: 0.9;
+  }
+
+  46% {
+    transform: translate3d(2.7rem, -48vh, 0) rotate(4deg);
+  }
+
+  76% {
+    opacity: 0.82;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(-1.2rem, -125vh, 0) rotate(-3deg);
+  }
+}
+
 .course-inner {
   position: relative;
   z-index: 1;
@@ -1153,6 +1225,15 @@ button {
     width: min(100%, 20rem);
   }
 
+  .course-floating-balloon {
+    left: 1.25rem;
+    width: 4.6rem;
+  }
+
+  .course-balloon-string {
+    height: 7rem;
+  }
+
   .contact {
     min-height: 660px;
   }
@@ -1183,5 +1264,9 @@ button {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+
+  .course-floating-balloon {
+    display: none;
   }
 }
