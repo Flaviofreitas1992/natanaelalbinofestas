@@ -486,6 +486,10 @@ button {
   transform: translateY(-2px);
 }
 
+.contact.is-archived {
+  display: none;
+}
+
 .contact {
   min-height: 720px;
   display: grid;
