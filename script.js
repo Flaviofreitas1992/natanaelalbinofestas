@@ -21,3 +21,32 @@ if ("IntersectionObserver" in window) {
 } else {
   revealElements.forEach((element) => element.classList.add("is-visible"));
 }
+
+const courseSection = document.querySelector(".course");
+const courseBalloon = document.querySelector(".course-floating-balloon");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (courseSection && courseBalloon && !prefersReducedMotion) {
+  const startBalloonAnimation = () => {
+    courseBalloon.classList.add("is-rising");
+    courseBalloon.addEventListener("animationend", () => courseBalloon.remove(), {
+      once: true,
+    });
+  };
+
+  if ("IntersectionObserver" in window) {
+    const balloonObserver = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+
+        startBalloonAnimation();
+        balloonObserver.disconnect();
+      },
+      { threshold: 0.12 },
+    );
+
+    balloonObserver.observe(courseSection);
+  } else {
+    startBalloonAnimation();
+  }
+}
