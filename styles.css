@@ -807,6 +807,27 @@ button {
   letter-spacing: -0.03em;
 }
 
+
+.course-action {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.course-button {
+  width: min(100%, 24rem);
+  border-color: var(--ink-soft);
+  color: var(--paper-light);
+  background: var(--ink-soft);
+}
+
+.course-button:hover,
+.course-button:focus-visible {
+  border-color: var(--ink-soft);
+  color: var(--ink-soft);
+  background: transparent;
+}
+
 .site-footer {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
