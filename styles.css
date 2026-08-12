@@ -426,14 +426,12 @@ button {
 }
 
 .whatsapp-button {
-  position: relative;
   display: flex;
   width: min(100%, 20rem);
   min-height: 3.6rem;
   margin: 0 auto;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
   padding: 0.9rem 1.4rem;
   border: 1px solid var(--paper-light);
   border-radius: 999px;
@@ -446,24 +444,11 @@ button {
   transition: color 180ms ease, background-color 180ms ease, transform 180ms ease;
 }
 
-.whatsapp-button span:last-child {
-  position: absolute;
-  right: 1.4rem;
-  font-size: 1.1rem;
-  line-height: 1;
-  transition: transform 180ms ease;
-}
-
 .whatsapp-button:hover,
 .whatsapp-button:focus-visible {
   color: var(--paper-light);
   background: transparent;
   transform: translateY(-2px);
-}
-
-.whatsapp-button:hover span:last-child,
-.whatsapp-button:focus-visible span:last-child {
-  transform: translate(0.15rem, -0.15rem);
 }
 
 .experience {
