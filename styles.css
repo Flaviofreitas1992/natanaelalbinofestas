@@ -446,6 +446,75 @@ button {
   line-height: 1.65;
 }
 
+.whatsapp-cta {
+  display: grid;
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  background: var(--paper-light);
+  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+  align-items: end;
+  gap: clamp(3rem, 10vw, 10rem);
+}
+
+.whatsapp-cta-heading,
+.whatsapp-cta-action {
+  position: relative;
+  z-index: 1;
+}
+
+.whatsapp-cta h2 {
+  max-width: 11ch;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(3rem, 6vw, 6.6rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.whatsapp-cta-action > p {
+  max-width: 33rem;
+  margin: 0 0 2rem;
+  color: var(--ink-soft);
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+}
+
+.whatsapp-button {
+  display: inline-flex;
+  min-height: 3.6rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0.9rem 1.4rem;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  color: var(--paper-light);
+  background: var(--ink);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.whatsapp-button span:last-child {
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform 180ms ease;
+}
+
+.whatsapp-button:hover,
+.whatsapp-button:focus-visible {
+  color: var(--ink);
+  background: transparent;
+  transform: translateY(-2px);
+}
+
+.whatsapp-button:hover span:last-child,
+.whatsapp-button:focus-visible span:last-child {
+  transform: translate(0.15rem, -0.15rem);
+}
+
 .experience {
   color: var(--paper-light);
   background: var(--ink-soft);
@@ -792,6 +861,16 @@ button {
     gap: 0.5rem;
   }
 
+  .whatsapp-cta {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 3rem;
+  }
+
+  .whatsapp-cta-action > p {
+    max-width: 38rem;
+  }
+
   .section-heading {
     grid-template-columns: 1fr;
   }
@@ -886,6 +965,10 @@ button {
   .essence-story figcaption {
     grid-template-columns: 2rem 1fr;
     gap: 0.75rem;
+  }
+
+  .whatsapp-button {
+    width: 100%;
   }
 
   .about {
