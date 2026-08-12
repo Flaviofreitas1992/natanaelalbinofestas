@@ -914,17 +914,73 @@ button {
 }
 
 .course-button {
+  position: relative;
+  isolation: isolate;
   width: min(100%, 24rem);
-  border-color: var(--ink-soft);
-  color: var(--paper-light);
-  background: var(--ink-soft);
+  gap: 0.85rem;
+  overflow: hidden;
+  border-color: #a95832;
+  color: #fffaf4;
+  background: linear-gradient(135deg, #653622 0%, #9a4f2c 52%, #c06a38 100%);
+  box-shadow:
+    0 0.85rem 2rem rgba(86, 57, 43, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.course-button::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  opacity: 0;
+  background: linear-gradient(135deg, #bd6637 0%, #8c4528 58%, #5d3020 100%);
+  transition: opacity 180ms ease;
+}
+
+.course-button::after {
+  display: grid;
+  width: 1.7rem;
+  height: 1.7rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(255, 250, 244, 0.62);
+  border-radius: 50%;
+  content: "→";
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1;
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
 .course-button:hover,
 .course-button:focus-visible {
-  border-color: var(--ink-soft);
-  color: var(--ink-soft);
-  background: transparent;
+  border-color: #c87847;
+  color: #fffaf4;
+  background: linear-gradient(135deg, #653622 0%, #9a4f2c 52%, #c06a38 100%);
+  box-shadow:
+    0 1.1rem 2.5rem rgba(86, 57, 43, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.26);
+}
+
+.course-button:hover::before,
+.course-button:focus-visible::before {
+  opacity: 1;
+}
+
+.course-button:hover::after,
+.course-button:focus-visible::after {
+  color: #743c25;
+  background: #fffaf4;
+  transform: translateX(0.18rem);
+}
+
+.course-button:focus-visible {
+  outline: 3px solid rgba(169, 88, 50, 0.32);
+  outline-offset: 4px;
 }
 
 .site-footer {
