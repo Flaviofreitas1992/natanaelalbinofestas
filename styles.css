@@ -304,8 +304,9 @@ button {
 
 .essence-note.gallery-note {
   width: max-content;
-  margin: 0 0 0 auto;
-  text-align: right;
+  margin: 0 auto 0 0;
+  justify-self: start;
+  text-align: left;
 }
 
 .gallery-note + .essence-gallery {
