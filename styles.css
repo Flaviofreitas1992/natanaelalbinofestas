@@ -253,8 +253,6 @@ button {
 }
 
 .manifesto-copy h2,
-.section-heading h2,
-.about-copy h2,
 .contact h2 {
   margin: 0;
   font-family: var(--serif);
@@ -486,111 +484,6 @@ button {
   transform: translateY(-2px);
 }
 
-.experience {
-  color: var(--paper-light);
-  background: var(--ink-soft);
-}
-
-.section-heading {
-  display: grid;
-  grid-template-columns: 0.6fr 1.7fr;
-  align-items: start;
-  gap: 2rem;
-}
-
-.section-heading h2 {
-  max-width: 12ch;
-}
-
-.experience-grid {
-  display: grid;
-  margin-top: clamp(4rem, 8vw, 8rem);
-  border-top: 1px solid var(--white-line);
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.experience-card {
-  min-height: 330px;
-  padding: 1.35rem clamp(1.2rem, 2vw, 2rem) 2rem;
-  border-right: 1px solid var(--white-line);
-}
-
-.experience-card:first-child {
-  padding-left: 0;
-}
-
-.experience-card:last-child {
-  border-right: 0;
-}
-
-.experience-card > span {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-}
-
-.experience-card h3 {
-  margin: 5rem 0 1.2rem;
-  font-family: var(--serif);
-  font-size: clamp(1.7rem, 3vw, 2.65rem);
-  font-weight: 400;
-  line-height: 1;
-}
-
-.experience-card p {
-  max-width: 24rem;
-  margin: 0;
-  color: rgba(245, 242, 233, 0.68);
-}
-
-.about {
-  display: grid;
-  min-height: 720px;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
-  gap: clamp(3rem, 10vw, 10rem);
-  background: var(--paper-light);
-}
-
-.about-quote {
-  position: relative;
-  padding-left: clamp(2rem, 5vw, 5rem);
-}
-
-.quote-mark {
-  position: absolute;
-  top: -3rem;
-  left: 0;
-  color: var(--mist);
-  font-family: var(--serif);
-  font-size: 7rem;
-  line-height: 1;
-}
-
-.about blockquote {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: clamp(2.5rem, 5vw, 5.5rem);
-  line-height: 0.98;
-  letter-spacing: -0.045em;
-}
-
-.about-copy {
-  max-width: 35rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--line);
-}
-
-.about-copy h2 {
-  font-size: clamp(2.4rem, 4.2vw, 4.8rem);
-}
-
-.about-copy > p:last-child {
-  margin: 2rem 0 0;
-  color: var(--ink-soft);
-  font-size: 1.08rem;
-}
-
 .contact {
   min-height: 720px;
   display: grid;
@@ -789,34 +682,6 @@ button {
     max-width: 38rem;
   }
 
-  .section-heading {
-    grid-template-columns: 1fr;
-  }
-
-  .experience-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .experience-card,
-  .experience-card:first-child {
-    min-height: 260px;
-    padding: 1.4rem 0 2rem;
-    border-right: 0;
-    border-bottom: 1px solid var(--white-line);
-  }
-
-  .experience-card:last-child {
-    border-bottom: 0;
-  }
-
-  .experience-card h3 {
-    margin-top: 3rem;
-  }
-
-  .about {
-    grid-template-columns: 1fr;
-  }
-
   .site-footer {
     grid-template-columns: 1fr auto;
     gap: 1.5rem;
@@ -887,14 +752,6 @@ button {
 
   .whatsapp-button {
     width: min(100%, 20rem);
-  }
-
-  .about {
-    min-height: auto;
-  }
-
-  .about-quote {
-    padding-left: 1.5rem;
   }
 
   .contact {
