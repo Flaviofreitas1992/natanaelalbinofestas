@@ -48,6 +48,27 @@ desativados. O visitante pode rever sua escolha em **Preferências de privacidad
 > O clique na Hotmart mede o início do checkout, não a compra concluída. As vendas efetivas
 > devem ser conferidas na Hotmart ou integradas ao GA4 pela página de confirmação da plataforma.
 
+## SEO e compartilhamento
+
+A página inclui:
+
+- título e descrição voltados à decoração autoral;
+- metadados Open Graph e Twitter Card;
+- imagem social de 1200 × 630 pixels;
+- favicon em SVG;
+- diretiva para indexação e prévia ampla de imagens;
+- dados estruturados JSON-LD para site, empresa, Natanael Albino e curso;
+- `robots.txt` e `sitemap.xml`.
+
+Depois da publicação:
+
+1. adicione `https://natanaelalbinofestas.com/` ao Google Search Console;
+2. envie `https://natanaelalbinofestas.com/sitemap.xml`;
+3. solicite a indexação da página principal;
+4. valide o JSON-LD no Teste de pesquisa aprimorada do Google;
+5. atualize o cache de compartilhamento das redes quando alterar a imagem social.
+
+
 ## Próxima etapa de conteúdo
 
 Antes da versão comercial definitiva, adicionar:
