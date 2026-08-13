@@ -8,6 +8,8 @@
       content="Natanael Albino Festas — celebrações autorais, desenhadas com sensibilidade, presença e intenção."
     >
     <meta name="theme-color" content="#121817">
+    <!-- Insira o ID G-... da propriedade GA4 para ativar a medição. -->
+    <meta name="google-analytics-id" content="G-BGMFE51RB6">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:title" content="Natanael Albino Festas">
@@ -24,6 +26,7 @@
     <link rel="preload" as="image" href="assets/natanael-albino.webp">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <script src="analytics.js" defer></script>
     <title>Natanael Albino Festas</title>
   </head>
 
@@ -211,6 +214,9 @@
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Fale conosco pelo WhatsApp"
+            data-analytics-event="generate_lead"
+            data-analytics-method="whatsapp"
+            data-analytics-location="festas_cta"
           >
             <span>Fale conosco</span>
           </a>
@@ -350,6 +356,8 @@
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Adquirir acesso ao Método Orgânico Natanael Albino na Hotmart"
+              data-analytics-event="begin_checkout"
+              data-analytics-location="course_final_cta"
             >
               <span>ADQUIRIR MEU ACESSO</span>
             </a>
@@ -384,7 +392,12 @@
           <small>Festas</small>
         </span>
       </a>
-      <p>© <span data-year></span> Natanael Albino Festas.</p>
+      <div class="footer-meta">
+        <p>© <span data-year></span> Natanael Albino Festas.</p>
+        <button class="privacy-settings" type="button" data-analytics-settings hidden>
+          Preferências de privacidade
+        </button>
+      </div>
       <a href="#inicio">Voltar ao topo ↑</a>
     </footer>
   </body>
