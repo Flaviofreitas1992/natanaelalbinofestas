@@ -206,7 +206,7 @@
           Agora não
         </button>
         <button type="button" class="consent-button consent-button-primary" data-consent-choice="granted">
-          Aceitar medição
+          Aceitar cookies
         </button>
       </div>
     `;
