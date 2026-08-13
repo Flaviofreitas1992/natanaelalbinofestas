@@ -937,8 +937,35 @@ button {
 
 .course-action {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  gap: 1rem;
   margin-top: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.course-payment-note {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0;
+  color: rgba(17, 23, 22, 0.62);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.course-payment-note span {
+  display: grid;
+  width: 1.15rem;
+  height: 1.15rem;
+  place-items: center;
+  border: 1px solid rgba(86, 57, 43, 0.38);
+  border-radius: 50%;
+  color: var(--ink-soft);
+  font-size: 0.67rem;
 }
 
 .course-button {
@@ -1136,35 +1163,194 @@ button {
   }
 }
 
-.site-footer {
+.trust-section {
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.trust-intro {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  padding: 2rem var(--page-pad);
+  grid-template-columns: minmax(10rem, 0.55fr) minmax(0, 1.45fr);
+  gap: clamp(2rem, 7vw, 8rem);
+  align-items: start;
+}
+
+.trust-intro .eyebrow {
+  padding-top: 0.7rem;
+  color: var(--ink-soft);
+}
+
+.trust-intro h2 {
+  max-width: 15ch;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(2.7rem, 5.6vw, 6.1rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.052em;
+}
+
+.trust-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 0;
+  margin: clamp(4rem, 8vw, 7rem) 0 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  list-style: none;
+}
+
+.trust-list li {
+  display: flex;
+  min-width: 0;
+  min-height: 17rem;
+  flex-direction: column;
+  padding: clamp(1.5rem, 3vw, 2.7rem);
+}
+
+.trust-list li + li {
+  border-left: 1px solid var(--line);
+}
+
+.trust-index {
+  color: rgba(17, 23, 22, 0.45);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.trust-list strong {
+  margin-top: auto;
+  color: var(--ink-soft);
+  font-family: var(--serif);
+  font-size: clamp(1.7rem, 2.6vw, 2.75rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.trust-list p {
+  max-width: 18rem;
+  margin: 1rem 0 0;
+  color: rgba(17, 23, 22, 0.64);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.site-footer {
+  padding: clamp(4rem, 7vw, 6.5rem) var(--page-pad) 2rem;
   border-top: 1px solid var(--white-line);
   color: var(--paper-light);
   background: var(--ink);
-  font-size: 0.65rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
-.site-footer p {
-  margin: 0;
+.footer-main {
+  display: grid;
+  grid-template-columns: minmax(16rem, 1.35fr) minmax(9rem, 0.65fr) minmax(14rem, 1fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  padding-bottom: clamp(3.5rem, 6vw, 5.5rem);
 }
 
-.site-footer > a:last-child {
-  justify-self: end;
+.footer-lead > p {
+  max-width: 29rem;
+  margin: 2rem 0 0;
+  color: rgba(245, 242, 233, 0.58);
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 1.7vw, 1.45rem);
+  line-height: 1.45;
 }
 
 .footer-brand {
-  justify-self: start;
   text-transform: none;
 }
 
 .footer-brand .brand-mark {
-  width: 2.35rem;
-  height: 2.35rem;
+  width: 2.7rem;
+  height: 2.7rem;
+}
+
+.footer-heading {
+  margin: 0 0 1.4rem;
+  color: rgba(245, 242, 233, 0.5);
+  font-size: 0.61rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.footer-nav ul {
+  display: grid;
+  gap: 0.7rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footer-nav a,
+.footer-contact a,
+.footer-top {
+  width: fit-content;
+  color: rgba(245, 242, 233, 0.82);
+  font-size: 0.82rem;
+  transition: color 180ms ease;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus-visible,
+.footer-contact a:hover,
+.footer-contact a:focus-visible,
+.footer-top:hover,
+.footer-top:focus-visible {
+  color: var(--paper-light);
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
+.footer-contact {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+
+.footer-contact .footer-heading {
+  margin-bottom: 0.7rem;
+}
+
+.footer-contact a {
+  overflow-wrap: anywhere;
+}
+
+.footer-cnpj {
+  margin: 0.65rem 0 0;
+  color: rgba(245, 242, 233, 0.52);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+}
+
+.footer-bottom {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--white-line);
+}
+
+.footer-bottom > p {
+  margin: 0;
+  color: rgba(245, 242, 233, 0.48);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-footer .footer-meta {
+  justify-self: auto;
+  text-align: left;
 }
 
 .reveal {
@@ -1370,13 +1556,45 @@ button {
     max-width: 38rem;
   }
 
-  .site-footer {
-    grid-template-columns: 1fr auto;
+  .trust-intro {
+    grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
-  .site-footer p {
-    display: none;
+  .trust-intro .eyebrow {
+    padding-top: 0;
+  }
+
+  .trust-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .trust-list li:nth-child(3) {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .trust-list li:nth-child(4) {
+    border-top: 1px solid var(--line);
+  }
+
+  .footer-main {
+    grid-template-columns: minmax(0, 1.35fr) minmax(9rem, 0.65fr);
+  }
+
+  .footer-contact {
+    grid-column: 1 / -1;
+    padding-top: 2rem;
+    border-top: 1px solid var(--white-line);
+  }
+
+  .footer-bottom {
+    grid-template-columns: 1fr auto;
+  }
+
+  .footer-top {
+    grid-column: 2;
+    grid-row: 1 / span 2;
   }
 }
 
@@ -1450,8 +1668,47 @@ button {
     width: 145vw;
   }
 
+  .trust-list {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-list li {
+    min-height: 13rem;
+    padding: 1.8rem 0;
+  }
+
+  .trust-list li + li,
+  .trust-list li:nth-child(3) {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 2.8rem;
+  }
+
+  .footer-contact {
+    grid-column: auto;
+  }
+
   .footer-brand .brand-name {
-    display: none;
+    display: flex;
+  }
+
+  .footer-bottom {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .footer-top {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .course-payment-note {
+    max-width: 16rem;
+    line-height: 1.45;
   }
 }
 
